@@ -5,6 +5,7 @@ import App from './App.vue'
 import Home from './components/Home'
 import AppCustomers from './components/AppCustomers'
 import AppProducts from './components/AppProducts'
+import LatestPurchases from './components/LatestPurchases'
 
 
 
@@ -15,6 +16,9 @@ const routes = [
   {path:'/',component: Home},
   {path:'/customers',component: AppCustomers},
   {path:'/products',component: AppProducts},
+  {path:'/customers/:id',component: LatestPurchases},
+  
+
   
 
 ]
