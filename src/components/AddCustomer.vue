@@ -18,7 +18,9 @@
           <input type="email" class="form-control"  v-model="customer.email"><br>
         </div>
 
-        <button class="btn btn-primaty btn-block" type="submit">Add customer</button>
+        <input type="hidden" v-model="customer.id" />
+               
+        <button class="btn btn-success " type="submit">Add customer</button>
 
     </form>
         
@@ -31,27 +33,27 @@ import uuid from 'uuid'
 export default {
     data(){
         return {
-   customer:{firstName:"",lastName:"",email:""}
-
+          customer:{id:0, firstName:"",lastName:"",email:""},
         }
+        
     },
-    
+
     methods:{
          addCustomer(){
-            let customer = {
-                id:uuid.v4(),
-                firstName:this.firstName,
-                lastName:this.lastName,
-                email:this.email
+          this.customer.id=this._uid-1;
+          this.$emit('add-cust',this.customer);
+          this._uid++;
         }
-        this.$emit('add-cust',customer);
-    }
     
     }
+   
 
 }
 </script>
 
-<style>
+<style scoped>
+form {
+  margin:50px 100px;
 
+}
 </style>

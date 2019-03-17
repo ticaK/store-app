@@ -6,7 +6,6 @@
     <li><router-link to="/customers">Customers</router-link></li>
     <li><router-link to="/products">Products</router-link></li>
     </ul>
-    <router-view/>
 </div>
 </template>
 
