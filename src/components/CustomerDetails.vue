@@ -11,6 +11,9 @@
                <tr>
                     <td>Email:{{ customer.email }}</td>
                </tr>
+                <tr>
+                    <td>List of products:{{ customer.products }}</td>
+               </tr>
             
             </table>
     <router-link to="/customers">Back</router-link>

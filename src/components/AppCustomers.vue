@@ -23,15 +23,10 @@ export default {
 
     data(){
         return {
-            customers:[
-                {id:1, firstName:"Tijana", lastName:"Koprivica", email:"tijana@gmail.com"},
-                {id:2, firstName:"Jana", lastName:"Janic", email:"jana@gmail.com"},
-                {id:3, firstName:"Ana", lastName:"Anic", email:"ana@gmail.com"},
-                {id:4, firstName:"Marko", lastName:"Markovic", email:"marko@gmail.com"},
-                {id:5, firstName:"Janko", lastName:"Jankovic", email:"janko@gmail.com"},  
-            ]  
+              
         }
     },
+    props:["customers"],
     methods:{
 
         addCustomer(customer){

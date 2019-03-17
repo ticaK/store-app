@@ -1,7 +1,7 @@
 <template>
   <div id="app">
      <Navbar/>
-    <router-view/>
+    <router-view :customers="customers" />
 
   </div>
 </template>
@@ -13,7 +13,21 @@ export default {
   name: 'app',
   components: {
    Navbar
-  }
+  },
+  data(){
+    return {
+      customers:[
+                {id:1, firstName:"Tijana", lastName:"Koprivica", email:"tijana@gmail.com", products:[]},
+                {id:2, firstName:"Jana", lastName:"Janic", email:"jana@gmail.com",products:[]},
+                {id:3, firstName:"Ana", lastName:"Anic", email:"ana@gmail.com",products:[]},
+                {id:4, firstName:"Marko", lastName:"Markovic", email:"marko@gmail.com",products:[]},
+                {id:5, firstName:"Janko", lastName:"Jankovic", email:"janko@gmail.com",products:[]},  
+            ]
+    }
+  },
+  methods:{
+    
+}
 }
 </script>
 

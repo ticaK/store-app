@@ -1,7 +1,7 @@
 <template>
     <div>
     <ProductsList v-if="!routeProduct" :products="products"/>
-    <ProductDetails v-else :product="routeProduct"/>
+    <ProductDetails v-else :product="routeProduct" :customers="customers"/>
 
         
     </div>
@@ -22,7 +22,7 @@ export default {
             products:[
                 {id:1, title:"book",quantity:6},
                 {id:2, title:"pencil",quantity:7},
-                {id:3, title:"car",quantity:8},
+                {id:3, title:"car",quantity:2},
                 {id:4, title:"table",quantity:6},
                 {id:5, title:"bag",quantity:6},
                 {id:6, title:"bananas",quantity:7}
@@ -30,6 +30,7 @@ export default {
            
         }
     },
+    props:["customers"],
     methods:{
         
     },
@@ -50,21 +51,4 @@ export default {
 }
 </script>
 
-<style scoped>
 
-table, th, td {
-  text-align: center;
-  border: 1px solid black;
-  font-weight: bold;
-}
-
-table{
-  margin:50px;
-  width: 80%;  
-}
-
-th {
-  background-color: #cec7c7;
-}
-
-</style>

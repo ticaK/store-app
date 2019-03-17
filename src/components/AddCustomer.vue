@@ -18,6 +18,11 @@
           <input type="email" class="form-control"  v-model="customer.email"><br>
         </div>
 
+        <div class="form-group">
+          <label>Products:</label>
+          <input type="text" class="form-control"  v-model="customer.products"><br>
+        </div>
+
         <input type="hidden" v-model="customer.id" />
                
         <button class="btn btn-success " type="submit">Add customer</button>
@@ -33,7 +38,7 @@ import uuid from 'uuid'
 export default {
     data(){
         return {
-          customer:{id:0, firstName:"",lastName:"",email:""},
+          customer:{id:0, firstName:"",lastName:"",email:"",products:[]},
         }
         
     },

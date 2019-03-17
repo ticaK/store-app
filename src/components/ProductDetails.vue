@@ -11,12 +11,58 @@
                
             </table>
 
+            <div class="form-group">
+            <label for="customer">Customer</label>
+            <select class="form-control" id="customer" v-model="selectedCustomer">
+              <option v-for="customer in customers" :key="customer.id" :value="customer">
+                {{ customer.firstName}}
+              </option>
+            </select>
+            <button @click="sellProduct(product)">Confirm</button>
+            <router-link class="btn btn-light" to="/products">Cancel</router-link>
+
+            <router-link class="btn btn-light" id="go-back" style="display:none" to="/products">Go back to products</router-link>
+
+
+          </div>
+          
+
+
     </div>
 </template>
 
 <script>
     export default {
-        props: ['product'],
+      data(){
+        return {
+          selectedCustomer:null
+
+        }
+      },
+        props: ['product','customers'],
+        methods:{
+          sellProduct(prod){
+            if(!this.selectedCustomer){
+              alert('Please select a customer ')
+            }
+            else if (prod.quantity===0){
+              alert("There are no products")
+              var btn = document.getElementById("go-back");
+              btn.style.display="block";     
+             
+            } else {
+              this.selectedCustomer.products.push(prod);
+              prod.quantity--;
+      
+            }
+              
+
+             
+            
+          }
+          
+        }
+        
     }
 </script>
 <style scoped>

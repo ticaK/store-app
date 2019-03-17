@@ -6,6 +6,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
+              
                 <th>Remove</th>
                 <th>Latest Purchases</th>
                 
@@ -16,6 +17,7 @@
                 <td>{{customer.firstName}}</td>
                 <td>{{customer.lastName}}</td>
                 <td>{{customer.email}}</td>
+
                 <td><button class="btn-warning btn-block" @click="removeCustomer(index)">Remove</button></td>
                 <td><router-link :to="{ name: 'latest-purchases', params: {id: customer.id} }">
                             Latest Purchases
