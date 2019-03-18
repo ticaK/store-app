@@ -12,11 +12,11 @@
                     <td>Email:{{ customer.email }}</td>
                </tr>
                 <tr>
-                    <td>List of products:{{ customer.products }}</td>
+                    <td>List of products:{{ customer.products}}</td>
                </tr>
             
             </table>
-    <router-link to="/customers">Back</router-link>
+    <button><router-link to="/customers">Back</router-link></button>
 
         <p></p>
     </div>

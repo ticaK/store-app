@@ -18,10 +18,6 @@
           <input type="email" class="form-control"  v-model="customer.email"><br>
         </div>
 
-        <div class="form-group">
-          <label>Products:</label>
-          <input type="text" class="form-control"  v-model="customer.products"><br>
-        </div>
 
         <input type="hidden" v-model="customer.id" />
                
@@ -46,7 +42,7 @@ export default {
     methods:{
          addCustomer(){
           this.customer.id=this._uid-1;
-          this.$emit('add-cust',this.customer);
+          this.$emit('add-cust', this.customer);
           this._uid++;
         }
     

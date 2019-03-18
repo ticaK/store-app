@@ -2,7 +2,7 @@
 <div>
     <ul>
 
-    <li><router-link to="/">Home</router-link></li>  
+    <li><strong><router-link to="/customers">Store</router-link></strong></li>  
     <li><router-link to="/customers">Customers</router-link></li>
     <li><router-link to="/products">Products</router-link></li>
     </ul>

@@ -1,5 +1,7 @@
 <template>
     <div>
+<AddCustomer @add-cust="addCustomer"  />
+
          <table>
             <tr>
                 <th>Id</th>
@@ -21,23 +23,32 @@
                 <td><button class="btn-warning btn-block" @click="removeCustomer(index)">Remove</button></td>
                 <td><router-link :to="{ name: 'latest-purchases', params: {id: customer.id} }">
                             Latest Purchases
-                        </router-link></td>
-                
-            </tr> 
-
+                    </router-link>
+                </td>   
+            </tr>
     </table> 
-    </div>
+ </div>
 </template>
 
 <script>
+import AddCustomer from './AddCustomer.vue'
+
 export default {
+        components:{
+          AddCustomer
+        },
+
         props: ['customers'],
+
         methods:{
              removeCustomer(index){
             this.customers.splice(index,1);
-        }
-        }
-    
+            },
+            
+            addCustomer(customer){
+                this.customers.push({...customer});
+            }
+       }
 }
 </script>
 
